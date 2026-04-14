@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="https://i.pinimg.com/474x/82/9a/ea/829aead468380dead97722a25687353a.jpg">
+    <link rel="shortcut icon" href="https://lobehub.com/icons/grok.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ultimate Blox Fruits Guide - All 41 Devil Fruits, 3 Seas, 7 Races V1-V4, Raids &amp; Awakenings, Latest Update! Fully responsive with modern animations.">
+    <title>Blox Fruits Fan Site </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap');
+        
+        :root {
+            --primary: #0ea5e9;
+        }
+        
+        * {
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, box-shadow;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 200ms;
+        }
+        
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+        
+        .game-bg {
+            background: linear-gradient(135deg, #0a1428 0%, #1e2a4a 100%);
+        }
+        
+        .hero-bg {
+            background: radial-gradient(circle at center, #0ea5e9 0%, #0a1428 65%);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: -2px;
+            left: 0;
+            background-color: #0ea5e9;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .fruit-card {
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        
+        .fruit-card:hover {
+            transform: scale(1.06) translateY(-4px);
+            box-shadow: 0 30px 60px -15px rgb(14 165 233);
+        }
+        
+        .section-header {
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from { text-shadow: 0 0 15px #0ea5e9; }
+            to { text-shadow: 0 0 35px #0ea5e9, 0 0 50px #0ea5e9; }
+        }
+        
+        .page {
+            animation: fadeInPage 0.6s ease forwards;
+        }
+        
+        @keyframes fadeInPage {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        
+        .floating-fruit {
+            animation: floatFruit 4s ease-in-out infinite;
+        }
+        
+        .mobile-menu {
+            animation: slideDown 0.3s ease forwards;
+        }
+        
+        .modern-button {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .modern-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 40%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: 0.6s;
+        }
+        
+        .modern-button:hover::before {
+            left: 150%;
+        }
+        
+        .hero-button {
+            box-shadow: 0 0 30px -5px rgb(14 165 233);
+        }
+        
+        .hero-button:hover {
+            box-shadow: 0 0 45px 10px rgb(14 165 233);
+            transform: scale(1) translateY(-2px);
+        }
+        
+        /* Reduced animation intensity for home buttons as requested */
+        .hero-button-fruit:hover {
+            animation: fruitPop 0.3s ease-in-out;
+        }
+        
+        @keyframes fruitPop {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.08) rotate(4deg); }
+            100% { transform: scale(1.08) rotate(0deg); }
+        }
+        
+        .hero-button-race:hover {
+            animation: racePop 0.3s ease-in-out;
+        }
+        
+        @keyframes racePop {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.08) rotate(-3deg); }
+            100% { transform: scale(1.08) rotate(0deg); }
+        }
+        
+        .stat-bar {
+            animation: statFill 1.8s ease forwards;
+        }
+        
+        .race-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .race-card:hover {
+            transform: translateY(-6px);
+            border-color: #0ea5e9;
+        }
+        
+        /* Raid cards now have the same hover style */
+        .raid-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .raid-card:hover {
+            transform: translateY(-6px);
+            border-color: #0ea5e9;
+        }
+        
+        /* Rarity badge colors */
+        .rarity-common { background-color: #10b981; color: #fff; }
+        .rarity-uncommon { background-color: #6b7280; color: #fff; }
+        .rarity-rare { background-color: #3b82f6; color: #fff; }
+        .rarity-legendary { background-color: #eab308; color: #000; }
+        .rarity-mythical { background-color: #ef4444; color: #fff; }
+    </style>
+</head>
+<body class="game-bg text-white min-h-screen">
+
+
+    <!-- NAVBAR -->
+    <nav class="bg-black/80 backdrop-blur-md border-b border-[#0ea5e9]/30 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo now clickable to HOME -->
+                <button onclick="navigateTo(0)" class="flex items-center gap-3 focus:outline-none">
+                    <div class="w-10 h-10 bg-[#0ea5e9] rounded-2xl flex items-center justify-center text-3xl shadow-[0_0_25px_#0ea5e9] floating-fruit">🍓</div>
+                    <h1 class="text-2xl font-semibold tracking-[-1px] text-[#0ea5e9]">BLOX FRUITS</h1>
+                </button>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                    <button onclick="navigateTo(0)" class="nav-link px-4 py-2 text-white hover:text-[#0ea5e9] flex items-center gap-1">
+                        <span>🏠</span> HOME
+                    </button>
+                    <button onclick="navigateTo(1)" class="nav-link px-4 py-2 text-white hover:text-[#0ea5e9] flex items-center gap-1">
+                        <span>🥭</span> FRUITS
+                    </button>
+                    <button onclick="navigateTo(2)" class="nav-link px-4 py-2 text-white hover:text-[#0ea5e9] flex items-center gap-1">
+                        <span>🌊</span> SEAS
+                    </button>
+                    <button onclick="navigateTo(3)" class="nav-link px-4 py-2 text-white hover:text-[#0ea5e9] flex items-center gap-1">
+                        <span>🧬</span> RACES V1-V4
+                    </button>
+                    <button onclick="navigateTo(4)" class="nav-link px-4 py-2 text-white hover:text-[#0ea5e9] flex items-center gap-1">
+                        <span>⚔️</span> RAIDS
+                    </button>
+                    <button onclick="navigateTo(5)" class="nav-link px-4 py-2 text-white hover:text-[#0ea5e9] flex items-center gap-1">
+                        <span>🚀</span> UPDATES
+                    </button>
+                </div>
+
+                <!-- Mobile Hamburger -->
+                <button onclick="toggleMobileMenu()" class="md:hidden text-3xl text-[#0ea5e9]">
+                    <span id="hamburger">☰</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden mobile-menu bg-black/95 border-t border-[#0ea5e9]/30 px-4 py-6">
+            <div class="flex flex-col gap-6 text-center">
+                <button onclick="navigateTo(0);toggleMobileMenu()" class="text-xl py-3 hover:bg-[#0ea5e9]/10 rounded-3xl">🏠 HOME</button>
+                <button onclick="navigateTo(1);toggleMobileMenu()" class="text-xl py-3 hover:bg-[#0ea5e9]/10 rounded-3xl">🍓 FRUITS</button>
+                <button onclick="navigateTo(2);toggleMobileMenu()" class="text-xl py-3 hover:bg-[#0ea5e9]/10 rounded-3xl">🌊 SEAS</button>
+                <button onclick="navigateTo(3);toggleMobileMenu()" class="text-xl py-3 hover:bg-[#0ea5e9]/10 rounded-3xl">🧬 RACES V1-V4</button>
+                <button onclick="navigateTo(4);toggleMobileMenu()" class="text-xl py-3 hover:bg-[#0ea5e9]/10 rounded-3xl">⚔️ RAIDS</button>
+                <button onclick="navigateTo(5);toggleMobileMenu()" class="text-xl py-3 hover:bg-[#0ea5e9]/10 rounded-3xl">🚀 UPDATES</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO / HOME PAGE -->
+    <div id="page-0" class="page">
+        <div class="hero-bg min-h-screen flex items-center relative overflow-hidden">
+            <!-- Floating fruits background -->
+            <div class="absolute inset-0 pointer-events-none overflow-hidden">
+                <div class="floating-fruit absolute text-6xl top-12 left-12">🍓</div>
+                <div class="floating-fruit absolute text-5xl top-1/3 right-16 animation-delay-500">🍇</div>
+                <div class="floating-fruit absolute text-7xl bottom-24 left-1/4 animation-delay-1000">🍉</div>
+                <div class="floating-fruit absolute text-4xl top-2/3 right-1/4 animation-delay-700">🍒</div>
+                <div class="floating-fruit absolute text-6xl bottom-12 right-12 animation-delay-1200">🥭</div>
+            </div>
+            
+            <div class="max-w-7xl mx-auto px-6 pt-20 pb-16 text-center">
+                <div class="inline-flex items-center gap-3 bg-black/60 text-white text-sm font-medium px-8 py-3 rounded-3xl mb-8 border border-[#0ea5e9]/50">
+                    UPDATE 31 • EASTER EVENT 2026
+                </div>
+                
+                <h1 class="text-6xl md:text-7xl font-semibold tracking-[-2px] mb-6 leading-none">
+                    BECOME THE<br>STRONGEST PIRATE
+                </h1>
+                <p class="text-2xl md:text-3xl text-white/90 mb-12 max-w-2xl mx-auto font-medium">
+                    Master all 41 Devil Fruits • Conquer 3 Seas • Awaken your Race V4 • Become The Best In The World!!
+                </p>
+                
+                <div class="flex flex-wrap justify-center gap-6">
+                    <button onclick="navigateTo(1)" 
+                            class="modern-button hero-button hero-button-fruit bg-white text-black font-semibold text-xl px-14 py-7 rounded-3xl flex items-center gap-4 hover:scale-110 active:scale-95 shadow-2xl">
+                        <span class="text-4xl">🍓</span>
+                        EXPLORE ALL FRUITS
+                    </button>
+                    <button onclick="navigateTo(3)" 
+                            class="modern-button hero-button hero-button-race border-2 border-white/90 text-white font-semibold text-xl px-14 py-7 rounded-3xl flex items-center gap-4 hover:bg-white/10">
+                        <span class="text-4xl">🧬</span>
+                        RACE AWAKENINGS V1-V4
+                    </button>
+                </div>
+                
+                <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto text-center">
+                    <div class="bg-black/30 backdrop-blur-xl rounded-3xl p-5 border border-white/10">
+                        <div class="text-4xl mb-3">🌊</div>
+                        <div class="font-semibold text-lg">3 SEAS</div>
+                        <div class="text-white/60 text-sm">Conquer them all</div>
+                    </div>
+                    <div class="bg-black/30 backdrop-blur-xl rounded-3xl p-5 border border-white/10">
+                        <div class="text-4xl mb-3">🍓</div>
+                        <div class="font-semibold text-lg">41 FRUITS</div>
+                        <div class="text-white/60 text-sm">Mythical &amp; Legendary</div>
+                    </div>
+                    <div class="bg-black/30 backdrop-blur-xl rounded-3xl p-5 border border-white/10">
+                        <div class="text-4xl mb-3">🧬</div>
+                        <div class="font-semibold text-lg">7 RACES</div>
+                        <div class="text-white/60 text-sm">V4 Awakened</div>
+                    </div>
+                    <div class="bg-black/30 backdrop-blur-xl rounded-3xl p-5 border border-white/10">
+                        <div class="text-4xl mb-3">🎁</div>
+                        <div class="font-semibold text-lg">UPDATES</div>
+                        <div class="text-white/60 text-sm">Legendary Updates </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Scroll indicator -->
+            <div onclick="navigateTo(1)" class="absolute bottom-12 left-1/2 flex flex-col items-center cursor-pointer">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FRUITS PAGE (reordered Mythical → Legendary → Rare → Uncommon → Common + accurate names from latest data) -->
+    <div id="page-1" class="page hidden max-w-7xl mx-auto px-6 py-16">
+        <h2 class="section-header text-5xl font-semibold text-center mb-3 text-white">ALL 41 DEVIL FRUITS</h2>
+        <p class="text-center text-[#0ea5e9] mb-8 text-xl font-medium">Complete list • Rarity &amp; spawn info • Updated for 2026</p>
+        
+        <!-- Rarity Legend -->
+        <div class="flex flex-wrap justify-center gap-4 mb-12">
+            <div class="flex items-center gap-2 bg-black/40 px-5 py-2 rounded-3xl text-sm">
+                <span class="text-red-400 text-xl">🔴</span>
+                <span class="font-medium">MYTHICAL</span>
+            </div>
+            <div class="flex items-center gap-2 bg-black/40 px-5 py-2 rounded-3xl text-sm">
+                <span class="text-amber-400 text-xl">🟡</span>
+                <span class="font-medium">LEGENDARY</span>
+            </div>
+            <div class="flex items-center gap-2 bg-black/40 px-5 py-2 rounded-3xl text-sm">
+                <span class="text-blue-400 text-xl">🔵</span>
+                <span class="font-medium">RARE</span>
+            </div>
+            <div class="flex items-center gap-2 bg-black/40 px-5 py-2 rounded-3xl text-sm">
+                <span class="text-gray-400 text-xl">⚪</span>
+                <span class="font-medium">UNCOMMON</span>
+            </div>
+            <div class="flex items-center gap-2 bg-black/40 px-5 py-2 rounded-3xl text-sm">
+                <span class="text-green-400 text-xl">🟢</span>
+                <span class="font-medium">COMMON</span>
+            </div>
+        </div>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-8">
+            
+            <!-- MYTHICAL (first) -->
+            <div class="fruit-card bg-gradient-to-br from-sky-500/10 to-black border border-[#0ea5e9]/30 rounded-3xl p-6">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="text-6xl">🐉</div>
+                    <div class="text-right">
+                        <span class="rarity-mythical text-white text-xs font-bold px-4 py-1 rounded-2xl">MYTHICAL • BEAST</span>
+                        <div class="text-2xl font-semibold mt-1">DRAGON</div>
+                    </div>
+                </div>
+                <p class="text-sm leading-relaxed mb-6">Beast-type transformation fruit. Massive fire AoE, flight, and insane damage. Best for Sea 3 PvP and grinding.</p>
+                <div class="text-xs uppercase mb-3 flex items-center gap-2"><span class="block w-3 h-px bg-[#0ea5e9]"></span> HOW TO USE</div>
+                <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-xs font-medium">
+                    <div>Z — Heatwave Cannon</div>
+                    <div>X — Infernal Pincer</div>
+                    <div>C — Scorching Downfall</div>
+                    <div>V — Imperial Evolution</div>
+                    <div>F — Draconic Soar</div>
+                </div>
+            </div>
+
+            <div class="fruit-card bg-gradient-to-br from-violet-500/10 to-black border border-[#0ea5e9]/30 rounded-3xl p-6">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="text-6xl">🦊</div>
+                    <div class="text-right">
+                        <span class="rarity-mythical text-white text-xs font-bold px-4 py-1 rounded-2xl">MYTHICAL • BEAST</span>
+                        <div class="text-2xl font-semibold mt-1">KITSUNE</div>
+                    </div>
+                </div>
+                <p class="text-sm leading-relaxed mb-6">Fox spirit with illusions, lightning dashes, burning attacks, and area control. Perfect for mobile players and 1v1s.</p>
+                <div class="text-xs uppercase mb-3 flex items-center gap-2"><span class="block w-3 h-px bg-[#0ea5e9]"></span> HOW TO USE</div>
+                <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-xs font-medium">
+                    <div>Z — Accursed Enchantment</div>
+                    <div>X — Tails of Burning Agony</div>
+                    <div>C — Fox Fire Disruption</div>
+                    <div>V — Transformation</div>
+                    <div>F — Wild Assault</div>
+                </div>
+            </div>
+
+            <div class="fruit-card bg-gradient-to-br from-red-500/10 to-black border border-[#0ea5e9]/30 rounded-3xl p-6">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="text-6xl">🐆</div>
+                    <div class="text-right">
+                        <span class="rarity-mythical text-white text-xs font-bold px-4 py-1 rounded-2xl">MYTHICAL • BEAST</span>
+                        <div class="text-2xl font-semibold mt-1">LEOPARD</div>
+                    </div>
+                </div>
+                <p class="text-sm leading-relaxed mb-6">Insane speed, claws, and burst damage. Dominates Sea 3 PvP with extreme mobility and combos.</p>
+                <div class="text-xs uppercase mb-3 flex items-center gap-2"><span class="block w-3 h-px bg-[#0ea5e9]"></span> HOW TO USE</div>
+                <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-xs font-medium">
+                    <div>Z — Razor Claw Rush</div>
+                    <div>X — Sonic Leap Strike</div>
+                    <div>C — Predator Form</div>
+                    <div>V — Full Awakening</div>
+                </div>
+            </div>
+
+            <div class="fruit-card bg-gradient-to-br from-amber-500/10 to-black border border-[#0ea5e9]/30 rounded-3xl p-6">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="text-6xl">🍩</div>
+                    <div class="text-right">
+                        <span class="rarity-mythical text-white text-xs font-bold px-4 py-1 rounded-2xl">MYTHICAL • ELEMENTAL</span>
+                        <div class="text-2xl font-semibold mt-1">DOUGH</div>
+                    </div>
+                </div>
+                <p class="text-sm leading-relaxed mb-6">Sticky traps, giant form, and massive combos. Great for control and crowd combos in Sea 3.</p>
+                <div class="text-xs uppercase mb-3 flex items-center gap-2"><span class="block w-3 h-px bg-[#0ea5e9]"></span> HOW TO USE</div>
+                <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-xs font-medium">
+                    <div>Z — Missile Jab</div>
+                    <div>X — Pastry River</div>
+                    <div>C — Piercing Clothesline</div>
+                    <div>V — Dough Fist Fusillade</div>
+                    <div>F — Scorching Donut</div>
+                </div>
+            </div>
+
+            <div class="fruit-card bg-gradient-to-br from-emerald-500/10 to-black border border-[#0ea5e9]/30 rounded-3xl p-6">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="text-6xl">☠️</div>
+                    <div class="text-right">
+                        <span class="rarity-mythical text-white text-xs font-bold px-4 py-1 rounded-2xl">MYTHICAL • NATURAL</span>
+                        <div class="text-2xl font-semibold mt-1">VENOM</div>
+                    </div>
+                </div>
+                <p class="text-sm leading-relaxed mb-6">Poison everything. Massive DoT damage, area denial, and transformation. Amazing for raids and grinding.</p>
+                <div class="text-xs uppercase mb-3 flex items-center gap-2"><span class="block w-3 h-px bg-[#0ea5e9]"></span> HOW TO USE</div>
+                <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-xs font-medium">
+                    <div>Z — Poison Daggers</div>
+                    <div>X — Noxious Shot</div>
+                    <div>C — Toxic Fog</div>
+                    <div>V — Transformation</div>
+                    <div>F — Serpent’s Wrath</div>
+                </div>
+            </div>
+
+            <div class="fruit-card bg-gradient-to-br from-purple-500/10 to-black border border-[#0ea5e9]/30 rounded-3xl p-6">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="text-6xl">🌀</div>
+                    <div class="text-right">
+                        <span class="rarity-mythical text-white text-xs font-bold px-4 py-1 rounded-2xl">MYTHICAL • NATURAL</span>
+                        <div class="text-2xl font-semibold mt-1">CONTROL</div>
+                    </div>
+                </div>
+                <p class="text-sm leading-relaxed mb-6">Domain control, slicing blasts, and transmutation. Ultimate utility and combo fruit.</p>
+                <div class="text-xs uppercase mb-3 flex items-center gap-2"><span class="block w-3 h-px bg-[#0ea5e9]"></span> HOW TO USE</div>
+                <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-xs font-medium">
+                    <div>Z — Domain Control</div>
+                    <div>X — Slice N’ Dice</div>
+                    <div>C — Gamma Blade</div>
+                    <div>F — Transmutation</div>
+                </div>
+            </div>
+
+            <div class="fruit-card bg-gradient-to-br from-cyan-400/10 to-black border border-[#0ea5e9]/30 rounded-3xl p-6">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="text-6xl">❄️</div>
+                    <div class="text-right">
+                        <span class="rarity-mythical text-white text-xs font-bold px-4 py-1 rounded-2xl">MYTHICAL • BEAST</span>
+                        <div class="text-2xl font-semibold mt-1">YETI</div>
+                    </div>
+                </div>
+                <p class="text-sm leading-relaxed mb-6">Arctic beast with frost boulders and crushing execution. Strong area denial.</p>
+                <div class="text-xs uppercase mb-3 flex items-center gap-2"><span class="block w-3 h-px bg-[#0ea5e9]"></span> HOW TO USE</div>
+                <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-xs font-medium">
+                    <div>Z — Arctic Clap</div>
+                    <div>X — Frostbite Boulder</div>
+                    <div>C — Glacial Execution</div>
+                    <div>V — Transformation</div>
+                    <div>F — Tundra Rush</div>
+                </div>
+            </div>
+
+            <div class="fruit-card bg-gradient-to-br from-amber-400/10 to-black border border-[#0ea5e9]/30 rounded-3xl p-6">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="text-6xl">🐅</div>
+                    <div class="text-right">
+                        <span class="rarity-mythical text-white text-xs font-bold px-4 py-1 rounded-2xl">MYTHICAL • BEAST</span>
+                        <div class="text-2xl font-semibold mt-1">TIGER</div>
+                    </div>
+                </div>
+                <p class="text-sm leading-relaxed mb-6">Martial arts tiger with agility and afterimage assaults. High mobility burst.</p>
+                <div class="text-xs uppercase mb-3 flex items-center gap-2"><span class="block w-3 h-px bg-[#0ea5e9]"></span> HOW TO USE</div>
+                <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-xs font-medium">
+                    <div>Z — Finger Revolver</div>
+                    <div>X — Spiraling Kick</div>
+                    <div>C — Afterimage Assault</div>
+                    <div>V — Transformation</div>
+                    <div>F — Body Flicker</div>
+                </div>
+            </div>
+
+            <div class="fruit-card bg-gradient-to-br from-indigo-500/10 to-black border border-[#0ea5e9]/30 rounded-3xl p-6">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="text-6xl">👻</div>
+                    <div class="text-right">
+                        <span class="rarity-mythical text-white text-xs font-bold px-4 py-1 rounded-2xl">MYTHICAL • NATURAL</span>
+                        <div class="text-2xl font-semibold mt-1">SPIRIT</div>
+                    </div>
+                </div>
+                <p class="text-sm leading-relaxed mb-6">Elemental grasp and wrath attacks. High damage with sky ruler mobility.</p>
+                <div class="text-xs uppercase mb-3 flex items-center gap-2"><span class="block w-3 h-px bg-[#0ea5e9]"></span> HOW TO USE</div>
+                <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-xs font-medium">
+                    <div>Z — Frostfire Grasp</div>
+                    <div>X — Wrath of Ra</div>
+                    <div>C — Wrath of Shu</div>
+                    <div>V — End of Times</div>
+                    <div>F — Sky Ruler</div>
+                </div>
+            </div>
+
+            <div class="fruit-card bg-gradient-to-br from-emerald-400/10 to-black border border-[#0ea5e9]/30 rounded-3xl p-6">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="text-6xl">☁️</div>
+                    <div class="text-right">
+                        <span class="rarity-mythical text-white text-xs font-bold px-4 py-1 rounded-2xl">MYTHICAL • ELEMENTAL</span>
+                        <div class="text-2xl font-semibold mt-1">GAS</div>
+                    </div>
+                </div>
+                <p class="text-sm leading-relaxed mb-6">Gas manipulation, poisoning, and vapor demons. Perfect for area denial.</p>
+                <div class="text-xs uppercase mb-3 flex items-center gap-2"><span class="block w-3 h-px bg-[#0ea5e9]"></span> HOW TO USE</div>
+                <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-xs font-medium">
+                    <div>Z — Suffocating Fumes</div>
+                    <div>X — Bursting Vapor</div>
+                    <div>C — Smog Demons</div>
+                    <div>V — Vapor Condensation</div>
+                    <div>F — Traveling Gas</div>
+                </div>
+            </div>
+
+            <div class="fruit-card bg-gradient-to-br from-slate-500/10 to-black border border-[#0ea5e9]/30 rounded-3xl p-6">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="text-6xl">🌑</div>
+                    <div class="text-right">
+                        <span class="rarity-mythical text-white text-xs font-bold px-4 py-1 rounded-2xl">MYTHICAL • NATURAL</span>
+                        <div class="text-2xl font-semibold mt-1">SHADOW</div>
+                    </div>
+                </div>
+                <p class="text-sm leading-relaxed mb-6">Shadow manipulation, nightmares, and torment. Strong crowd control + damage.</p>
+                <div class="text-xs uppercase mb-3 flex items-center gap-2"><span class="block w-3 h-px bg-[#0ea5e9]"></span> HOW TO USE</div>
+                <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-xs font-medium">
+                    <div>Z — Somber Rebellion</div>
+                    <div>X — Shade Nest</div>
+                    <div>C — Nightmare Leech</div>
+                    <div>V — Corvus Torment</div>
+                    <div>F — Umbrage</div>
+                </div>
+            </div>
+
+            <div class="fruit-card bg-gradient-to-br from-red-400/10 to-black border border-[#0ea5e9]/30 rounded-3xl p-6">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="text-6xl">🦖</div>
+                    <div class="text-right">
+                        <span class="rarity-mythical text-white text-xs font-bold px-4 py-1 rounded-2xl">MYTHICAL • BEAST</span>
+                        <div class="text-2xl font-semibold mt-1">T-REX</div>
+                    </div>
+                </div>
+                <p class="text-sm leading-relaxed mb-6">Predatory dinosaur with screeches and massive leaps. High burst beast power.</p>
+                <div class="text-xs uppercase mb-3 flex items-center gap-2"><span class="block w-3 h-px bg-[#0ea5e9]"></span> HOW TO USE</div>
+                <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-xs font-medium">
+                    <div>Z — Tail Swipe</div>
+                    <div>X — Predatory Screech</div>
+                    <div>C — Hunter’s Rage</div>
+                    <div>V — Reptilian Scales</div>
+                    <div>F — Gigantic Leap</div>
+                </div>
+            </div>
+
+            <div class="fruit-card bg-gradient-to-br from-amber-600/10 to-black border border-[#0ea5e9]/30 rounded-3xl p-6">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="text-6xl">🦣</div>
+                    <div class="text-right">
+                        <span class="rarity-mythical text-white text-xs font-bold px-4 py-1 rounded-2xl">MYTHICAL • BEAST</span>
+                        <div class="text-2xl font-semibold mt-1">MAMMOTH</div>
+                    </div>
+                </div>
+                <p class="text-sm leading-relaxed mb-6">Prehistoric crushing power and stampedes. Tanky beast with huge AoE.</p>
+                <div class="text-xs uppercase mb-3 flex items-center gap-2"><span class="block w-3 h-px bg-[#0ea5e9]"></span> HOW TO USE</div>
+                <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-xs font-medium">
+                    <div>Z — Ancient Cutter</div>
+                    <div>X — True Prehistoric Punt</div>
+                    <div>C — Colossal Crusher</div>
+                    <div>V — Transformation</div>
+                    <div>F — Stampede</div>
+                </div>
+            </div>
+
+            <div class="fruit-card bg-gradient-to-br from-violet-400/10 to-black border border-[#0ea5e9]/30 rounded-3xl p-6">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="text-6xl">🌍</div>
+                    <div class="text-right">
+                        <span class="rarity-mythical text-white text-xs font-bold px-4 py-1 rounded-2xl">MYTHICAL • NATURAL</span>
+                        <div class="text-2xl font-semibold mt-1">GRAVITY</div>
+                    </div>
+                </div>
+                <p class="text-sm leading-relaxed mb-6">Gravitational pulls, prisons, and asteroid crashes. Ultimate crowd control.</p>
+                <div class="text-xs uppercase mb-3 flex items-center gap-2"><span class="block w-3 h-px bg-[#0ea5e9]"></span> HOW TO USE</div>
+                <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-xs font-medium">
+                    <div>Z — Singularity</div>
+                    <div>X — Orbital Chain</div>
+                    <div>C — Gravitational Prison</div>
+                    <div>V — Asteroid Crash</div>
+                    <div>F — Shooting Star</div>
+                </div>
+            </div>
+
+            <!-- LEGENDARY -->
+            <div class="fruit-card bg-gradient-to-br from-amber-500/10 to-black border border-[#0ea5e9]/30 rounded-3xl p-6">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="text-6xl">🧘</div>
+                    <div class="text-right">
+                        <span class="rarity-legendary text-black text-xs font-bold px-4 py-1 rounded-2xl">LEGENDARY • NATURAL</span>
+                        <div class="text-2xl font-semibold mt-1">BUDDHA</div>
+                    </div>
+                </div>
+                <p class="text-sm leading-relaxed mb-6">Best grinding fruit. Huge AoE damage and defense. Still the king of Sea 2 farming and boss raids.</p>
+                <div class="text-xs uppercase mb-3 flex items-center gap-2"><span class="block w-3 h-px bg-[#0ea5e9]"></span> HOW TO USE</div>
+                <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-xs font-medium">
+                    <div>Z — Buddha Palm Strike</div>
+                    <div>X — Golden Buddha Form</div>
+                    <div>C — Meditation Defense</div>
+                </div>
+            </div>
+
+            <div class="fruit-card bg-gradient-to-br from-orange-500/10 to-black border border-[#0ea5e9]/30 rounded-3xl p-6">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="text-6xl">🔥</div>
+                    <div class="text-right">
+                        <span class="rarity-legendary text-black text-xs font-bold px-4 py-1 rounded-2xl">LEGENDARY • BEAST</span>
+                        <div class="text-2xl font-semibold mt-1">PHOENIX</div>
+                    </div>
+                </div>
+                <p class="text-sm leading-relaxed mb-6">Fly forever + heal yourself and allies. Amazing support, mobility, and sustain fruit.</p>
+                <div class="text-xs uppercase mb-3 flex items-center gap-2"><span class="block w-3 h-px bg-[#0ea5e9]"></span> HOW TO USE</div>
+                <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-xs font-medium">
+                    <div>Z — Phoenix Dash</div>
+                    <div>X — Healing Flames</div>
+                    <div>C — Full Phoenix Form</div>
+                    <div>V — Rebirth Flames</div>
+                </div>
+            </div>
+
+            <div class="fruit-card bg-gradient-to-br from-red-500/10 to-black border border-[#0ea5e9]/30 rounded-3xl p-6">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="text-6xl">🌋</div>
+                    <div class="text-right">
+                        <span class="rarity-legendary text-black text-xs font-bold px-4 py-1 rounded-2xl">LEGENDARY • ELEMENTAL</span>
+                        <div class="text-2xl font-semibold mt-1">MAGMA</div>
+                    </div>
+                </div>
+                <p class="text-sm leading-relaxed mb-6">Lava everywhere. Great for Sea 2 grinding, burning groups, and area denial.</p>
+                <div class="text-xs uppercase mb-3 flex items-center gap-2"><span class="block w-3 h-px bg-[#0ea5e9]"></span> HOW TO USE</div>
+                <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-xs font-medium">
+                    <div>Z — Magma Fist</div>
+                    <div>X — Lava Pool</div>
+                    <div>C — Volcanic Eruption</div>
+                </div>
+            </div>
+
+            <!-- RARE -->
+            <div class="fruit-card bg-gradient-to-br from-yellow-400/10 to-black border border-[#0ea5e9]/30 rounded-3xl p-6">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="text-6xl">⚡</div>
+                    <div class="text-right">
+                        <span class="rarity-rare text-black text-xs font-bold px-4 py-1 rounded-2xl">RARE • ELEMENTAL</span>
+                        <div class="text-2xl font-semibold mt-1">LIGHT</div>
+                    </div>
+                </div>
+                <p class="text-sm leading-relaxed mb-6">Teleportation and laser beams. Super mobile and beginner-friendly for Sea 1-2.</p>
+                <div class="text-xs uppercase mb-3 flex items-center gap-2"><span class="block w-3 h-px bg-[#0ea5e9]"></span> HOW TO USE</div>
+                <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-xs font-medium">
+                    <div>Z — Light Dash</div>
+                    <div>X — Laser Beam</div>
+                    <div>C — Light Form</div>
+                </div>
+            </div>
+
+            <div class="fruit-card bg-gradient-to-br from-zinc-500/10 to-black border border-[#0ea5e9]/30 rounded-3xl p-6">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="text-6xl">🌑</div>
+                    <div class="text-right">
+                        <span class="rarity-rare text-white text-xs font-bold px-4 py-1 rounded-2xl">RARE • NATURAL</span>
+                        <div class="text-2xl font-semibold mt-1">DARK</div>
+                    </div>
+                </div>
+                <p class="text-sm leading-relaxed mb-6">Black holes and pulls. Amazing crowd control and pulls in Sea 3 PvP.</p>
+                <div class="text-xs uppercase mb-3 flex items-center gap-2"><span class="block w-3 h-px bg-[#0ea5e9]"></span> HOW TO USE</div>
+                <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-xs font-medium">
+                    <div>Z — Dark Pull</div>
+                    <div>X — Black Hole</div>
+                    <div>C — Dark Transformation</div>
+                </div>
+            </div>
+
+            <!-- UNCOMMON -->
+            <div class="fruit-card bg-gradient-to-br from-cyan-500/10 to-black border border-[#0ea5e9]/30 rounded-3xl p-6">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="text-6xl">❄️</div>
+                    <div class="text-right">
+                        <span class="rarity-uncommon text-white text-xs font-bold px-4 py-1 rounded-2xl">UNCOMMON • ELEMENTAL</span>
+                        <div class="text-2xl font-semibold mt-1">ICE</div>
+                    </div>
+                </div>
+                <p class="text-sm leading-relaxed mb-6">Freeze enemies and create ice platforms. Great crowd control for Sea 1 and 2.</p>
+                <div class="text-xs uppercase mb-3 flex items-center gap-2"><span class="block w-3 h-px bg-[#0ea5e9]"></span> HOW TO USE</div>
+                <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-xs font-medium">
+                    <div>Z — Ice Spikes</div>
+                    <div>X — Freeze Breath</div>
+                    <div>C — Ice Skating Glide</div>
+                </div>
+            </div>
+
+            <!-- COMMON (last) -->
+            <div class="fruit-card bg-gradient-to-br from-orange-500/10 to-black border border-[#0ea5e9]/30 rounded-3xl p-6">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="text-6xl">🔥</div>
+                    <div class="text-right">
+                        <span class="rarity-common text-white text-xs font-bold px-4 py-1 rounded-2xl">COMMON • ELEMENTAL</span>
+                        <div class="text-2xl font-semibold mt-1">FLAME</div>
+                    </div>
+                </div>
+                <p class="text-sm leading-relaxed mb-6">Classic fire fruit. Good starter with strong burn damage and flight.</p>
+                <div class="text-xs uppercase mb-3 flex items-center gap-2"><span class="block w-3 h-px bg-[#0ea5e9]"></span> HOW TO USE</div>
+                <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-xs font-medium">
+                    <div>Z — Fireball Barrage</div>
+                    <div>X — Flame Pillar</div>
+                    <div>C — Fire Flight</div>
+                </div>
+            </div>
+
+            <div class="fruit-card bg-gradient-to-br from-green-500/10 to-black border border-[#0ea5e9]/30 rounded-3xl p-6">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="text-6xl">🚀</div>
+                    <div class="text-right">
+                        <span class="rarity-common text-white text-xs font-bold px-4 py-1 rounded-2xl">COMMON • NATURAL</span>
+                        <div class="text-2xl font-semibold mt-1">ROCKET</div>
+                    </div>
+                </div>
+                <p class="text-sm leading-relaxed mb-6">Beginner explosive fruit. Great for early mobility and damage. (Replaces old Bomb reference)</p>
+                <div class="text-xs uppercase mb-3 flex items-center gap-2"><span class="block w-3 h-px bg-[#0ea5e9]"></span> HOW TO USE</div>
+                <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-xs font-medium">
+                    <div>Z — Rocket Launcher</div>
+                    <div>X — Explosive Jump</div>
+                </div>
+            </div>
+
+            <div class="fruit-card bg-gradient-to-br from-gray-500/10 to-black border border-[#0ea5e9]/30 rounded-3xl p-6">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="text-6xl">🌀</div>
+                    <div class="text-right">
+                        <span class="rarity-common text-white text-xs font-bold px-4 py-1 rounded-2xl">COMMON • NATURAL</span>
+                        <div class="text-2xl font-semibold mt-1">SPIN</div>
+                    </div>
+                </div>
+                <p class="text-sm leading-relaxed mb-6">Fast spinning attacks. Good for crowd control in early seas.</p>
+                <div class="text-xs uppercase mb-3 flex items-center gap-2"><span class="block w-3 h-px bg-[#0ea5e9]"></span> HOW TO USE</div>
+                <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-xs font-medium">
+                    <div>Z — Spin Attack</div>
+                    <div>X — Tornado Spin</div>
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="text-center mt-16 text-sm text-white/60 max-w-md mx-auto">
+            Pro tip: Fruits spawn every ~60 minutes (45 min on weekends). Use the remover NPC if you want to switch. Store extras in your backpack! All 41 fruits listed above are the current complete roster.
+        </div>
+    </div>
+
+    <!-- SEAS PAGE -->
+    <div id="page-2" class="page hidden max-w-7xl mx-auto px-6 py-16">
+        <h2 class="section-header text-5xl font-semibold text-center mb-4">THE THREE SEAS</h2>
+        <p class="text-center max-w-md mx-auto mb-12 text-white/80">Progress through the oceans. Each sea unlocks new fruits, bosses, and power.</p>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-gradient-to-br from-blue-900/30 to-black border border-blue-400/30 rounded-3xl p-8 relative overflow-hidden">
+                <div class="absolute top-0 right-0 text-9xl opacity-10">🌊</div>
+                <div class="flex justify-between">
+                    <h3 class="text-4xl font-semibold">SEA 1</h3>
+                    <div class="text-xs bg-blue-400 text-black px-6 h-fit rounded-3xl font-bold flex items-center">LEVELS 1 - 700</div>
+                </div>
+                <p class="mt-6 text-sm">Starter sea. Learn basics, get your first Devil Fruit, fight simple bosses. Perfect for new pirates!</p>
+                <ul class="mt-8 space-y-4 text-sm">
+                    <li class="flex gap-3"><span class="text-[#0ea5e9]">•</span> Starter Island, Jungle, Pirate Village</li>
+                    <li class="flex gap-3"><span class="text-[#0ea5e9]">•</span> Easy fruits: Rocket, Spin, Flame, Ice</li>
+                    <li class="flex gap-3"><span class="text-[#0ea5e9]">•</span> Unlock your race (V1) here</li>
+                </ul>
+            </div>
+            
+            <div class="bg-gradient-to-br from-violet-900/30 to-black border border-violet-400/30 rounded-3xl p-8 relative overflow-hidden scale-105 shadow-2xl">
+                <div class="absolute top-0 right-0 text-9xl opacity-10">🌊</div>
+                <div class="flex justify-between">
+                    <h3 class="text-4xl font-semibold">SEA 2</h3>
+                    <div class="text-xs bg-violet-400 text-black px-6 h-fit rounded-3xl font-bold flex items-center">LEVELS 700 - 1500</div>
+                </div>
+                <p class="mt-6 text-sm">The real challenge begins. New islands, stronger enemies, and fruit reworks!</p>
+                <ul class="mt-8 space-y-4 text-sm">
+                    <li class="flex gap-3"><span class="text-[#0ea5e9]">•</span> Kingdom of Rose, Cafe, Ice Castle</li>
+                    <li class="flex gap-3"><span class="text-[#0ea5e9]">•</span> Legendary fruits spawn here</li>
+                    <li class="flex gap-3"><span class="text-[#0ea5e9]">•</span> Race V2 &amp; V3 awakenings unlocked</li>
+                </ul>
+            </div>
+            
+            <div class="bg-gradient-to-br from-red-900/30 to-black border border-red-400/30 rounded-3xl p-8 relative overflow-hidden">
+                <div class="absolute top-0 right-0 text-9xl opacity-10">🌊</div>
+                <div class="flex justify-between">
+                    <h3 class="text-4xl font-semibold">SEA 3</h3>
+                    <div class="text-xs bg-red-400 text-black px-6 h-fit rounded-3xl font-bold flex items-center">LEVEL 1500+</div>
+                </div>
+                <p class="mt-6 text-sm">Endgame. Terrorsharks, haunted ships, and the strongest fruits. Race V4 awaits!</p>
+                <ul class="mt-8 space-y-4 text-sm">
+                    <li class="flex gap-3"><span class="text-[#0ea5e9]">•</span> Port Town, Hydra Island, Tiki Outpost</li>
+                    <li class="flex gap-3"><span class="text-[#0ea5e9]">•</span> Mythical fruits spawn frequently here</li>
+                    <li class="flex gap-3"><span class="text-[#0ea5e9]">•</span> Full race awakenings V4</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- RACES PAGE -->
+    <div id="page-3" class="page hidden max-w-7xl mx-auto px-6 py-16">
+        <h2 class="section-header text-5xl font-semibold text-center mb-4">ALL 7 RACES + V1 → V4</h2>
+        <p class="text-center text-[#0ea5e9] mb-12">Choose your bloodline. Spawn rates shown below. V2 &amp; V3 unlock in Sea 2 • V4 unlocks in Sea 3 after trials.</p>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="race-card bg-black/60 rounded-3xl p-6 border border-white/10">
+                <div class="text-5xl mb-4">🧍</div>
+                <h4 class="font-semibold text-2xl">HUMAN</h4>
+                <div class="text-xs text-white/60">62.5% spawn rate • Balanced all-rounder</div>
+                <div class="mt-8 space-y-5 text-xs">
+                    <div><span class="text-[#0ea5e9]">V1</span> — No passive buffs<br><span class="text-white/50">No visual change</span></div>
+                    <div><span class="text-[#0ea5e9]">V2</span> — +Movement speed, Flash Step range doubled (10s CD), extra dodge &amp; instinct regen, longer dash<br><span class="text-white/50">No visual change</span></div>
+                    <div><span class="text-[#0ea5e9]">V3</span> — Last Resort (T): Massive damage boost based on low HP (up to +52%) for 6s<br><span class="text-white/50">No visual change</span></div>
+                    <div><span class="text-[#0ea5e9]">V4</span> — Berserker Awakening: Max stats, huge damage/speed boost + healing (Trial of Strength)<br><span class="text-white/50">Glowing aura during transformation</span></div>
+                </div>
+            </div>
+            
+            <div class="race-card bg-black/60 rounded-3xl p-6 border border-white/10">
+                <div class="text-5xl mb-4">🦈</div>
+                <h4 class="font-semibold text-2xl">SHARK</h4>
+                <div class="text-xs text-white/60">12.5% spawn rate • Water immunity</div>
+                <div class="mt-8 space-y-5 text-xs">
+                    <div><span class="text-[#0ea5e9]">V1</span> — Basic water resistance<br><span class="text-white/50">No visual change</span></div>
+                    <div><span class="text-[#0ea5e9]">V2</span> — Speed boost in/out water + complete water immunity<br><span class="text-white/50">Blue shark fin on back</span></div>
+                    <div><span class="text-[#0ea5e9]">V3</span> — Water Body (T): 70% damage reduction for 4.5s<br><span class="text-white/50">Extra fins on arms</span></div>
+                    <div><span class="text-[#0ea5e9]">V4</span> — Leviathan Awakening: Massive tankiness + water heal (Trial of Water)<br><span class="text-white/50">White fins + hair, extra tail fin in transformation</span></div>
+                </div>
+            </div>
+            
+            <div class="race-card bg-black/60 rounded-3xl p-6 border border-white/10">
+                <div class="text-5xl mb-4">👼</div>
+                <h4 class="font-semibold text-2xl">ANGEL</h4>
+                <div class="text-xs text-white/60">12.5% spawn rate • Flight race</div>
+                <div class="mt-8 space-y-5 text-xs">
+                    <div><span class="text-[#0ea5e9]">V1</span> — Extra air jumps<br><span class="text-white/50">No visual change</span></div>
+                    <div><span class="text-[#0ea5e9]">V2</span> — Improved air jumps + better flight sustain<br><span class="text-white/50">No visual change</span></div>
+                    <div><span class="text-[#0ea5e9]">V3</span> — Heavenly Blood (T): Defense boost + heal ~20% max HP<br><span class="text-white/50">Glowing wings appear</span></div>
+                    <div><span class="text-[#0ea5e9]">V4</span> — His Majesty Awakening: Full aerial dominance + massive sustain (Trial of the King)<br><span class="text-white/50">Large radiant wings + halo effect</span></div>
+                </div>
+            </div>
+            
+            <div class="race-card bg-black/60 rounded-3xl p-6 border border-white/10">
+                <div class="text-5xl mb-4">🐇</div>
+                <h4 class="font-semibold text-2xl">RABBIT</h4>
+                <div class="text-xs text-white/60">12.5% spawn rate • Speed demon</div>
+                <div class="mt-8 space-y-5 text-xs">
+                    <div><span class="text-[#0ea5e9]">V1</span> — Passive speed boost<br><span class="text-white/50">No visual change</span></div>
+                    <div><span class="text-[#0ea5e9]">V2</span> — Higher speed + improved dash distance<br><span class="text-white/50">No visual change</span></div>
+                    <div><span class="text-[#0ea5e9]">V3</span> — Agility (T): Extreme speed burst + dodge spam<br><span class="text-white/50">Lightning trail effect</span></div>
+                    <div><span class="text-[#0ea5e9]">V4</span> — Thunderbolt Awakening: Ultra speed + dash spam (Trial of Speed)<br><span class="text-white/50">Electric aura + speed lines</span></div>
+                </div>
+            </div>
+            
+            <div class="race-card bg-black/60 rounded-3xl p-6 border border-white/10 col-span-2 md:col-span-1">
+                <div class="text-5xl mb-4">🤖</div>
+                <h4 class="font-semibold text-2xl">CYBORG</h4>
+                <div class="text-xs text-white/60">Puzzle unlock • Tech (0% natural spawn)</div>
+                <div class="mt-8 space-y-5 text-xs">
+                    <div><span class="text-[#0ea5e9]">V1/V2</span> — 10-15% less melee/gun damage taken, damage converts to energy<br><span class="text-white/50">Blue energy lines on body</span></div>
+                    <div><span class="text-[#0ea5e9]">V3</span> — Energy Core (T): Defense +30%, area damage, breaks enemy Observation<br><span class="text-white/50">Blue wing-like energy effects</span></div>
+                    <div><span class="text-[#0ea5e9]">V4</span> — Genesis Awakening: Perfect block immunity + energy blades (Trial of the Machine)<br><span class="text-white/50">Full mechanical glow + core pulse</span></div>
+                </div>
+            </div>
+            
+            <div class="race-card bg-black/60 rounded-3xl p-6 border border-white/10 col-span-2 md:col-span-1">
+                <div class="text-5xl mb-4">🩸</div>
+                <h4 class="font-semibold text-2xl">GHOUL</h4>
+                <div class="text-xs text-white/60">Bloodlust (0% natural spawn)</div>
+                <div class="mt-8 space-y-5 text-xs">
+                    <div><span class="text-[#0ea5e9]">V1/V2</span> — Basic bloodlust passives<br><span class="text-white/50">No visual change</span></div>
+                    <div><span class="text-[#0ea5e9]">V3</span> — Heightened Senses (T): +Damage, +Speed, +Defense (stronger at night)<br><span class="text-white/50">Red glowing eyes + veins</span></div>
+                    <div><span class="text-[#0ea5e9]">V4</span> — Nightwalker Awakening: Heal on damage + vampire mode (Trial of Carnage)<br><span class="text-white/50">Full blood-red aura + fangs</span></div>
+                </div>
+            </div>
+            
+            <div class="race-card bg-black/60 rounded-3xl p-6 border border-white/10 col-span-2 md:col-span-1">
+                <div class="text-5xl mb-4">🐲</div>
+                <h4 class="font-semibold text-2xl">DRACO</h4>
+                <div class="text-xs text-white/60">Dragon bloodline (0% natural spawn)</div>
+                <div class="mt-8 space-y-5 text-xs">
+                    <div><span class="text-[#0ea5e9]">V1</span> — Basic dragon passives<br><span class="text-white/50">No visual change</span></div>
+                    <div><span class="text-[#0ea5e9]">V2</span> — Fire aura + minor buffs<br><span class="text-white/50">Dragon horns + scales appear (only race with V2 visual)</span></div>
+                    <div><span class="text-[#0ea5e9]">V3</span> — Team buff + enemy speed reduction + move cancel<br><span class="text-white/50">Full dragon scales + fire eyes</span></div>
+                    <div><span class="text-[#0ea5e9]">V4</span> — Primordial Guardian Awakening: Ultimate fire transformation (Trial of Flames)<br><span class="text-white/50">Massive dragon wings + flaming aura</span></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-16 text-sm bg-black/60 max-w-md mx-auto rounded-3xl p-8">
+            How to awaken: Reach the right sea → Talk to Arowe (Sea 2 for V2/V3) → Complete race-specific quests/trials → Race Master NPC in Sea 3 for V4. Starter races spawn naturally. Cyborg/Ghoul/Draco require puzzles or quests.
+        </div>
+    </div>
+
+    <!-- RAIDS PAGE (fixed navigation, individual cards for awakenings only, called "Awakening") -->
+    <div id="page-4" class="page hidden max-w-7xl mx-auto px-6 py-16">
+        <h2 class="section-header text-5xl font-semibold text-center mb-3 text-white">RAID AWAKENINGS</h2>
+        <p class="text-center text-[#0ea5e9] mb-12 text-xl font-medium">Special Microchip • Fruit Awakening Effects • Sea 2 &amp; Sea 3 locations</p>
+        
+        <div class="max-w-4xl mx-auto">
+            <!-- Raid Info -->
+            <div class="grid md:grid-cols-2 gap-8 mb-16">
+                <div class="bg-black/70 rounded-3xl p-8 border border-[#0ea5e9]/30">
+                    <div class="text-4xl mb-6">🔌</div>
+                    <h3 class="font-semibold text-2xl mb-4">THE SPECIAL MICROCHIP</h3>
+                    <p class="text-sm leading-relaxed">The Microchip is the key item needed to start a Fruit Awakening Raid. It costs around 1,000,000 Beli and is bought from the Raid NPC in Sea 3 (Port Town area). Rare drops also happen from high-level bosses and events.</p>
+                    <div class="mt-6 text-xs bg-black/50 p-4 rounded-2xl">Tip: You can only use 1 Microchip per raid. Bring friends — raids are much easier in a group of 2-4 players!</div>
+                </div>
+                
+                <div class="bg-black/70 rounded-3xl p-8 border border-[#0ea5e9]/30">
+                    <div class="text-4xl mb-6">🌍</div>
+                    <h3 class="font-semibold text-2xl mb-4">RAID LOCATIONS &amp; ORDER</h3>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex gap-3"><span class="text-[#0ea5e9]">•</span> <strong>Sea 2</strong> — Easier raids for lower-rarity fruits (start here if you’re level 700+)</li>
+                        <li class="flex gap-3"><span class="text-[#0ea5e9]">•</span> <strong>Sea 3</strong> — All raids available. Legendary &amp; Mythical fruits require Sea 3 entry (Port Town Raid NPC)</li>
+                        <li class="flex gap-3"><span class="text-[#0ea5e9]">•</span> Recommended order: Common/Uncommon → Rare → Legendary → Mythical (hardest raids last)</li>
+                    </ul>
+                    <p class="text-xs mt-6 text-white/60">The raid itself happens in a private dimension. You keep your current fruit equipped — the raid tests your ability to awaken it.</p>
+                </div>
+            </div>
+            
+            <!-- Awakening Effects (only fruits that actually have awakenings + individual cards) -->
+            <h3 class="text-3xl font-semibold text-center mb-8">FRUIT AWAKENING EFFECTS</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <div class="raid-card bg-gradient-to-br from-sky-500/10 to-black border border-[#0ea5e9]/30 rounded-3xl p-6 text-sm">
+                    <div class="flex items-center gap-3 mb-4"><span class="text-4xl">🐉</span><span class="font-semibold">DRAGON</span></div>
+                    <p><strong>Awakening:</strong> +40% damage, longer flight time, new ultimate fire transformation with massive AoE burn. Becomes the #1 PvP fruit.</p>
+                </div>
+                
+                <div class="raid-card bg-gradient-to-br from-violet-500/10 to-black border border-[#0ea5e9]/30 rounded-3xl p-6 text-sm">
+                    <div class="flex items-center gap-3 mb-4"><span class="text-4xl">🦊</span><span class="font-semibold">KITSUNE</span></div>
+                    <p><strong>Awakening:</strong> Stronger illusions, lightning storm now covers larger area, new tail whip combo. Perfect 1v1 meta.</p>
+                </div>
+                
+                <div class="raid-card bg-gradient-to-br from-red-500/10 to-black border border-[#0ea5e9]/30 rounded-3xl p-6 text-sm">
+                    <div class="flex items-center gap-3 mb-4"><span class="text-4xl">🐆</span><span class="font-semibold">LEOPARD</span></div>
+                    <p><strong>Awakening:</strong> Insane speed boost, claws now have bleed effect, new predator leap that stuns. Dominates Sea 3.</p>
+                </div>
+                
+                <div class="raid-card bg-gradient-to-br from-amber-500/10 to-black border border-[#0ea5e9]/30 rounded-3xl p-6 text-sm">
+                    <div class="flex items-center gap-3 mb-4"><span class="text-4xl">🍩</span><span class="font-semibold">DOUGH</span></div>
+                    <p><strong>Awakening:</strong> Sticky traps last longer, giant form now has bigger hitbox and stun, new donut barrage.</p>
+                </div>
+                
+                <div class="raid-card bg-gradient-to-br from-emerald-500/10 to-black border border-[#0ea5e9]/30 rounded-3xl p-6 text-sm">
+                    <div class="flex items-center gap-3 mb-4"><span class="text-4xl">☠️</span><span class="font-semibold">VENOM</span></div>
+                    <p><strong>Awakening:</strong> Poison DoT doubled, toxic fog now slows enemies, new serpent ultimate that poisons entire screen.</p>
+                </div>
+                
+                <div class="raid-card bg-gradient-to-br from-amber-500/10 to-black border border-[#0ea5e9]/30 rounded-3xl p-6 text-sm">
+                    <div class="flex items-center gap-3 mb-4"><span class="text-4xl">🧘</span><span class="font-semibold">BUDDHA</span></div>
+                    <p><strong>Awakening:</strong> Golden form lasts longer, bigger AoE palm strikes, massive defense boost for grinding.</p>
+                </div>
+                
+                <div class="raid-card bg-gradient-to-br from-orange-500/10 to-black border border-[#0ea5e9]/30 rounded-3xl p-6 text-sm">
+                    <div class="flex items-center gap-3 mb-4"><span class="text-4xl">🔥</span><span class="font-semibold">PHOENIX</span></div>
+                    <p><strong>Awakening:</strong> Healing flames now heal allies too, infinite flight with no stamina drain, rebirth ability revives you once.</p>
+                </div>
+                
+                <div class="raid-card bg-gradient-to-br from-red-500/10 to-black border border-[#0ea5e9]/30 rounded-3xl p-6 text-sm">
+                    <div class="flex items-center gap-3 mb-4"><span class="text-4xl">🌋</span><span class="font-semibold">MAGMA</span></div>
+                    <p><strong>Awakening:</strong> Lava pools ignite faster, new eruption that launches enemies, huge burn damage over time.</p>
+                </div>
+                
+                <div class="raid-card bg-gradient-to-br from-yellow-400/10 to-black border border-[#0ea5e9]/30 rounded-3xl p-6 text-sm">
+                    <div class="flex items-center gap-3 mb-4"><span class="text-4xl">⚡</span><span class="font-semibold">LIGHT</span></div>
+                    <p><strong>Awakening:</strong> Faster teleport dashes, laser beam pierces multiple enemies, light form now reflects projectiles.</p>
+                </div>
+                
+                <div class="raid-card bg-gradient-to-br from-cyan-500/10 to-black border border-[#0ea5e9]/30 rounded-3xl p-6 text-sm">
+                    <div class="flex items-center gap-3 mb-4"><span class="text-4xl">❄️</span><span class="font-semibold">ICE</span></div>
+                    <p><strong>Awakening:</strong> Freeze duration doubled, ice platforms now damage enemies on contact, new glacial spike ultimate.</p>
+                </div>
+                
+                <div class="raid-card bg-gradient-to-br from-orange-500/10 to-black border border-[#0ea5e9]/30 rounded-3xl p-6 text-sm">
+                    <div class="flex items-center gap-3 mb-4"><span class="text-4xl">🔥</span><span class="font-semibold">FLAME</span></div>
+                    <p><strong>Awakening:</strong> Stronger burn, fireball barrage now homes in, flight speed greatly increased.</p>
+                </div>
+                
+                <div class="raid-card bg-gradient-to-br from-zinc-500/10 to-black border border-[#0ea5e9]/30 rounded-3xl p-6 text-sm">
+                    <div class="flex items-center gap-3 mb-4"><span class="text-4xl">🌑</span><span class="font-semibold">DARK</span></div>
+                    <p><strong>Awakening:</strong> Black hole pulls stronger, new dark explosion that blinds enemies, better crowd control.</p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12 text-sm text-white/60">
+                Pro tip: Only higher-rarity fruits (Rare+) have full awakenings. Common fruits like Rocket and Spin do not awaken. Bring Observation Haki and good blocks. Raids scale with your level and fruit.
+            </div>
+        </div>
+    </div>
+
+    <!-- UPDATES PAGE -->
+    <div id="page-5" class="page hidden max-w-7xl mx-auto px-6 py-16">
+        <h2 class="section-header text-5xl font-semibold text-center mb-4">LATEST UPDATE</h2>
+        <div class="text-center mb-12">
+            <span class="px-8 py-2 bg-[#0ea5e9] text-white font-semibold rounded-3xl inline-block">UPDATE 31 — EASTER EVENT 🐣</span>
+            <p class="text-2xl mt-6">Released March 28, 2026 (Ended At 4/11/2026)</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h3 class="text-[#0ea5e9] text-xl mb-6">WHAT'S NEW</h3>
+                <ul class="space-y-8">
+                    <li class="flex gap-6">
+                        <div class="text-4xl">🎁</div>
+                        <div>
+                            <div class="font-semibold">Easter Gifts</div>
+                            <div class="text-sm">Rare Easter Gift • Legendary Easter Gift </div>
+                            <p class="text-xs text-white/60 mt-2">Open them for massive EXP, Beli, and exclusive fruit skins!</p>
+                        </div>
+                    </li>
+                    </li>
+                    <li class="flex gap-6">
+                        <div class="text-4xl">⚡</div>
+                        <div>
+                            <div class="font-semibold">Quality of Life</div>
+                            <div class="text-sm">Observation less laggy on mobile • Flash Step cancel • Safe zone in raids</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="bg-black/70 rounded-3xl p-8 border border-[#0ea5e9]">
+                <h4 class="font-semibold mb-6 text-lg">ACTIVE CODES (April 2026)</h4>
+                <div class="grid grid-cols-2 gap-4 text-sm font-mono">
+                    <div class="bg-black/50 p-4 rounded-2xl">EASTEREXP</div>
+                    <div class="bg-black/50 p-4 rounded-2xl">fudd10</div>
+                    <div class="bg-black/50 p-4 rounded-2xl">fudd10_V2</div>
+                    <div class="bg-black/50 p-4 rounded-2xl">Chandler</div>
+                    <div class="bg-black/50 p-4 rounded-2xl">BIGNEWS</div>
+                    <div class="bg-black/50 p-4 rounded-2xl">KITT_RESET</div>
+                    <div class="bg-black/50 p-4 rounded-2xl">Sub2UncleKizaru</div>
+                    <div class="bg-black/50 p-4 rounded-2xl">SUB2GAMERROBOT_RESET1</div>
+                    <div class="bg-black/50 p-4 rounded-2xl">Sub2Fer999</div>
+                    <div class="bg-black/50 p-4 rounded-2xl">Enyu_is_Pro</div>
+                    <div class="bg-black/50 p-4 rounded-2xl">JCWK</div>
+                    <div class="bg-black/50 p-4 rounded-2xl">StarcodeHEO</div>
+                </div>
+                <p class="text-xs mt-8 text-center text-white/60">Redeem in the game menu. More codes drop daily during the event!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-black py-12 border-t border-[#0ea5e9]/20 text-xs">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="flex items-center justify-center gap-2 mb-6">Made with ❤️ For The Blox Fruits Community • Fan Site With Real Game Data</p>
+            <p class="mt-8 opacity-40">© 2026 _Yxsef-made Blox Fruits Fan Site •  Affiliated with Roblox (kinda)</p> 
+        </div>
+    </footer>
+
+    <script>
+        // Tailwind initialization
+        function initializeTailwind() {
+            return {
+                config(userConfig = {}) {
+                    return {
+                        configUser: userConfig,
+                        theme: {
+                            extend: {
+                                colors: {
+                                    primary: '#0ea5e9'
+                                }
+                            }
+                        }
+                    }
+                },
+                theme: {
+                    extend: {},
+                },
+            }
+        }
+        
+        // Navigation (pages now in correct DOM order: 0 home, 1 fruits, 2 seas, 3 races, 4 raids, 5 updates)
+        let currentPage = 0
+        const pages = document.querySelectorAll('.page')
+        
+        function navigateTo(pageIndex) {
+            pages.forEach(page => page.classList.add('hidden'))
+            pages[pageIndex].classList.remove('hidden')
+            currentPage = pageIndex
+            window.scrollTo({ top: 0, behavior: 'smooth' })
+        }
+        
+        // Mobile menu
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu')
+            const hamburger = document.getElementById('hamburger')
+            
+            if (menu.classList.contains('hidden')) {
+                menu.style.display = 'block'
+                hamburger.innerHTML = '✕'
+            } else {
+                menu.style.display = 'none'
+                hamburger.innerHTML = '☰'
+            }
+        }
+        
+        // Keyboard shortcuts
+        function addKeyboardShortcuts() {
+            document.addEventListener('keydown', (e) => {
+                if (e.metaKey && e.key === "k") {
+                    e.preventDefault()
+                    alert("🎉 You just used the secret shortcut! Modern Blox Fruits site is fully loaded with all 41 fruits, raids &amp; awakenings.")
+                }
+            })
+        }
+        
+        // Initialize everything
+        function launchSite() {
+            initializeTailwind()
+            addKeyboardShortcuts()
+            
+            // Make first page visible
+            pages[0].classList.remove('hidden')
+            
+            console.log('%c✅ Modern Blox Fruits website loaded! Fruits reordered Mythical→Common • Raid navigation fixed • Logo button to home • Reduced home button hover intensity • Individual awakening cards ✓', 'background:#0ea5e9;color:#000;font-size:14px;padding:4px 8px;border-radius:9999px')
+        }
+        
+        // Boot the site
+        window.onload = launchSite
+    </script>
+</body>
+</html>
